@@ -22,3 +22,23 @@ categoryTogglerBtn.addEventListener('click', () => {
         categoryTogglerBtn.querySelector('i').className = "fas fa-circle-arrow-down";
     }
 })
+
+// feedback
+const feedbackItems = document.querySelectorAll('.feedback-item');
+const feedbackBtns = document.querySelectorAll('.feedback-btn');
+const feedbackDisplay = document.querySelector('#feedback-display');
+
+let activeId = 1;
+changeFeedback(activeId);
+function changeFeedback(id){
+    feedbackItems.forEach((item) => {
+        if(id == item.dataset.id){
+            // swapping data id
+            [feedbackDisplay.dataset.id, item.dataset.id] = [item.dataset.id, feedbackDisplay.dataset.id];
+            // swapping the innder content
+            [feedbackDisplay.innerHTML, item.innerHTML] = [item.innerHTML, feedbackDisplay.innerHTML];
+            // swapping quote image
+            [feedbackDisplay.querySelector('img').src, item.querySelector('img').src] = [item.querySelector('img').src, feedbackDisplay.querySelector('img').src];
+        }
+    });
+}
