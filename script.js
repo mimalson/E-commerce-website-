@@ -51,3 +51,9 @@ feedbackBtns.forEach((btn, index) =>{
         changeFeedback(activeId);
     });
 });
+
+function feedbackBtnReset(){
+    feedbackBtns.forEach((btn) => {
+        btn.classList.remove('feedback-active-btn');
+    });
+}
