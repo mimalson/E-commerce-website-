@@ -42,3 +42,12 @@ function changeFeedback(id){
         }
     });
 }
+
+feedbackBtns.forEach((btn, index) =>{
+    btn.addEventListener('click', () => {
+        activeId = index + 1;
+        feedbackBtnReset();
+        btn.classList.add('feedback-active-btn');
+        changeFeedback(activeId);
+    });
+});
